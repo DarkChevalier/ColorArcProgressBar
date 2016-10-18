@@ -382,6 +382,11 @@ public class ColorArcProgressBar extends View{
         WindowManager windowManager = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(displayMetrics);
+		if (dispalyMetrics.widthPixels > displayMetrics.heightPixels)
+		{
+			return displayMetrics.heightPixels * 0.4;
+		}
+
         return displayMetrics.widthPixels;
     }
 }
